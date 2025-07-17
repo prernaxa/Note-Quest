@@ -20,7 +20,13 @@ export default function UserCard({ user }) {
 
   if (!user) return <p className="text-white">Loading...</p>;
 
-  const xpPercent = user.xp % 100;
+  // --- ✅ Updated XP progress logic ---
+  const currentLevel = user.level;
+  const xpForCurrentLevel = 100 * Math.pow(currentLevel - 1, 2);
+  const xpForNextLevel = 100 * Math.pow(currentLevel, 2);
+  const xpProgress = user.xp - xpForCurrentLevel;
+  const xpNeeded = xpForNextLevel - xpForCurrentLevel;
+  const xpPercent = Math.min(100, Math.round((xpProgress / xpNeeded) * 100));
 
   return (
     <motion.div
@@ -74,7 +80,9 @@ export default function UserCard({ user }) {
             transition={{ duration: 0.6 }}
           />
         </div>
-        <p className="text-xs text-gray-300 mt-1">XP to next level: {100 - xpPercent}</p>
+        <p className="text-xs text-gray-300 mt-1">
+          {xpProgress} / {xpNeeded} XP to next level
+        </p>
       </div>
     </motion.div>
   );

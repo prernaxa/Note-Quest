@@ -48,14 +48,14 @@ export default function NoteForm({ note, setNote, onSubmit, themeClasses }) {
         </motion.h2>
 
         <input
-          className="w-full p-3 mb-3 rounded-lg text-black border border-gray-300 focus:outline-none focus:ring-2 focus:ring-purple-500 transition"
+          className="w-full p-3 mb-3 rounded-lg text-white border border-gray-300 focus:outline-none focus:ring-2 focus:ring-purple-500 transition"
           placeholder="Enter note title..."
           value={note.title}
           onChange={(e) => setNote({ ...note, title: e.target.value })}
         />
 
         <textarea
-          className="w-full p-3 mb-4 rounded-lg text-black border border-gray-300 focus:outline-none focus:ring-2 focus:ring-purple-500 transition"
+          className="w-full p-3 mb-4 rounded-lg text-white border border-gray-300 focus:outline-none focus:ring-2 focus:ring-purple-500 transition"
           rows={4}
           placeholder="Write your note here..."
           value={note.content}

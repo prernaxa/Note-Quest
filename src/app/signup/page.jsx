@@ -29,7 +29,7 @@ export default function SignupPage() {
   return (
     <main className="min-h-screen bg-gradient-to-br from-gray-900 via-indigo-950 to-purple-900 text-white flex flex-col items-center justify-center px-4">
       <div className="max-w-md w-full space-y-6 bg-white bg-opacity-5 p-8 rounded-2xl shadow-2xl backdrop-blur">
-        <h1 className="text-4xl font-extrabold text-center tracking-tight bg-gradient-to-r from-purple-400 to-pink-500 text-transparent bg-clip-text">
+        <h1 className="text-4xl font-extrabold text-center tracking-tight bg-gradient-to-r from-purple-800 to-pink-500 text-transparent bg-clip-text">
           Create Your Account
         </h1>
 
@@ -57,7 +57,7 @@ export default function SignupPage() {
           />
           <button
             type="button"
-            className="absolute right-3 top-1/2 transform -translate-y-1/2 text-gray-500 hover:text-gray-700"
+            className="absolute right-3 top-1/2 transform -translate-y-1/2 text-purple-700 hover:text-purple-900"
             onClick={() => setShowPassword((prev) => !prev)}
           >
             {showPassword ? <EyeOff size={20} /> : <Eye size={20} />}
@@ -66,7 +66,7 @@ export default function SignupPage() {
 
         <button
           onClick={handleSignup}
-          className="w-full bg-purple-600 text-white font-bold py-3 rounded-xl shadow-xl hover:scale-105 hover:bg-purple-500 transition-transform duration-300 flex items-center justify-center gap-2"
+          className="w-full bg-purple-800 text-white font-bold py-3 rounded-xl shadow-xl hover:scale-105 hover:bg-purple-900 transition-transform duration-300 flex items-center justify-center gap-2"
         >
           <UserPlus size={20} />
           Sign Up

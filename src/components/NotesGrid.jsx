@@ -65,12 +65,7 @@ export default function NotesGrid({ notes, setNote, onDelete, onReview }) {
                     <Trash2 size={14} /> Delete
                   </button>
 
-                  <button
-                    onClick={() => onReview(n._id)}
-                    className="flex items-center gap-1 bg-green-600 hover:bg-green-700 text-white px-3 py-1 text-sm rounded transition"
-                  >
-                    <CheckCircle size={14} /> Review
-                  </button>
+                  
                 </div>
               </div>
             </motion.div>
