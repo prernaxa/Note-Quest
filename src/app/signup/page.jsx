@@ -3,6 +3,7 @@
 import { useState } from 'react';
 import { useRouter } from 'next/navigation';
 import { UserPlus, Eye, EyeOff } from 'lucide-react';
+import toast from 'react-hot-toast';
 
 export default function SignupPage() {
   const router = useRouter();
@@ -16,13 +17,13 @@ export default function SignupPage() {
       headers: { 'Content-Type': 'application/json' },
     });
 
+    const data = await res.json();
+
     if (res.ok) {
-      const { userId } = await res.json();
-      localStorage.setItem('userId', userId);
-      router.push('/dashboard');
+      toast.success('Signup successful! Redirecting...');
+      setTimeout(() => router.push('/login'), 1500);
     } else {
-      const err = await res.json();
-      alert(err.error || 'Signup failed');
+      toast.error(data.error || 'Signup failed');
     }
   };
 
@@ -40,6 +41,7 @@ export default function SignupPage() {
           value={form.name}
           onChange={(e) => setForm({ ...form, name: e.target.value })}
         />
+
         <input
           type="email"
           placeholder="Email"
@@ -47,6 +49,7 @@ export default function SignupPage() {
           value={form.email}
           onChange={(e) => setForm({ ...form, email: e.target.value })}
         />
+
         <div className="relative">
           <input
             type={showPassword ? 'text' : 'password'}
