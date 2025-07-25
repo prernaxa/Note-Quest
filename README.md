@@ -91,8 +91,4 @@ Open [http://localhost:3000](http://localhost:3000) to see the app in action.
 - Mobile view optimizations
 - Dark mode toggle
 
----
 
-## Author
-
-Made with dedication by [Prerna Prakash](https://github.com/prernaxa)
